@@ -48,24 +48,24 @@
   <canvas id="particles"></canvas>
   <div class="container">
     <div class="profile">
-      <div class="logo"><img src= alt="Ninja Xiter" /></div>
+      <div class="logo"><img src= "https://media.discordapp.net/attachments/1469426248668156007/1469426284902744125/painel_ninja.webp?ex=69879d5e&is=69864bde&hm=881acb89659e4435391b52e222f0d57c5e71b7d846a23f52a4ed9671f0272648&=&format=webp" alt="Ninja Xiter" /></div>
       <div class="name">Ninja Xiter</div>
       <div class="tag">Entrega automática • Acesso imediato • Pagamento seguro</div>
-    </div><a href="https://pay.kiwify.com.br/0lTirJe" target="_blank"><div class="card"><div class="title">NINJA XITER • 1 DIA</div><div class="price">R$ 9,90</div></div></a>
+    </div><a href="https://pay.kiwify.com.br/0lTirJe" target="_blank"><div class="card"><div class="title">Painel Ninja • 1 DIA</div><div class="price">R$ 9,90</div></div></a>
 
 
-<a href="https://pay.kiwify.com.br/GD2rI8p" target="_blank"><div class="card"><div class="title">NINJA XITER • 7 DIAS</div><div class="price">R$ 24,90</div></div></a>
+<a href="https://pay.kiwify.com.br/GD2rI8p" target="_blank"><div class="card"><div class="title">Painel Ninja • 7 DIAS</div><div class="price">R$ 24,90</div></div></a>
 
 
-<a href="https://pay.kiwify.com.br/UUk6S1R" target="_blank"><div class="card"><div class="title">NINJA XITER • 15 DIAS</div><div class="price">R$ 39,90</div></div></a>
+<a href="https://pay.kiwify.com.br/UUk6S1R" target="_blank"><div class="card"><div class="title">Painel Ninja • 15 DIAS</div><div class="price">R$ 39,90</div></div></a>
 
 
 <a href="https://pay.kiwify.com.br/O1hUXrQ" target="_blank"><div class="card destaque">
     <div class="badge">MAIS VENDIDO</div>
-    <div class="title">🔥 NINJA XITER • 30 DIAS 🔥</div><div class="price">R$ 59,90</div></div></a>
+    <div class="title">🔥 Painel Ninja • 30 DIAS 🔥</div><div class="price">R$ 59,90</div></div></a>
 
 
-<a href="https://pay.kiwify.com.br/1NpfykK" target="_blank"><div class="card"><div class="title">NINJA XITER • PERMANENTE</div><div class="price">R$ 99,90</div></div></a>
+<a href="https://pay.kiwify.com.br/1NpfykK" target="_blank"><div class="card"><div class="title">Painel Ninja • PERMANENTE</div><div class="price">R$ 99,90</div></div></a>
 
 
 <div class="auto"><div><b>ENTREGA AUTOMÁTICA</b></div><small>Após o pagamento, o acesso é liberado automaticamente no checkout.</small></div>
@@ -76,6 +76,94 @@
   <h3>Pagamento confirmado 🎉</h3>
   <p>Seu acesso foi liberado automaticamente. Verifique o e-mail do checkout para baixar o produto ou acessar o painel.</p>
 </div>
+
+<div class="footer">© Ninja Xiter</div>
+
+  </div><button id="musicToggle" class="music-btn">🔊 Música</button>
+
+<script>
+  const music = document.getElementById('bgMusic');
+  const toggle = document.getElementById('musicToggle');
+  let musicOn = false;
+
+  // iniciar música após interação
+  document.body.addEventListener('click', () => {
+    if (!musicOn) {
+      music.volume = 0.15;
+      music.play();
+      musicOn = true;
+      toggle.textContent = '🔊 Música ON';
+    }
+  }, { once: true });
+
+  // botão liga/desliga
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (music.paused) {
+      music.play();
+      toggle.textContent = '🔊 Música ON';
+    } else {
+      music.pause();
+      toggle.textContent = '🔇 Música OFF';
+    }
+  });
+
+  // som de clique
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      const click = document.getElementById('clickSound');
+      click.currentTime = 0;
+      click.volume = 0.3;
+      click.play();
+    });
+  });
+<!-- SOM DE CLIQUE -->
+<audio id="clickSound" src="click.mp3"></audio>
+
+<!-- MÚSICA DE FUNDO -->
+<audio id="bgMusic" src="music.mp3" loop></audio>
+
+<!-- BOTÃO DE MÚSICA -->
+<button id="musicToggle" class="music-btn">🔊 Música</button>
+
+<script>
+  const music = document.getElementById('bgMusic');
+  const toggle = document.getElementById('musicToggle');
+  let musicOn = false;
+
+  // iniciar música após primeira interação
+  document.body.addEventListener('click', () => {
+    if (!musicOn) {
+      music.volume = 0.15; // volume baixo
+      music.play();
+      musicOn = true;
+      toggle.textContent = '🔊 Música ON';
+    }
+  }, { once: true });
+
+  // botão liga/desliga música
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation(); // não ativa o play automático de novo
+    if (music.paused) {
+      music.play();
+      toggle.textContent = '🔊 Música ON';
+    } else {
+      music.pause();
+      toggle.textContent = '🔇 Música OFF';
+    }
+  });
+
+  // som de clique nos planos
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      const click = document.getElementById('clickSound');
+      click.currentTime = 0;
+      click.volume = 0.3;
+      click.play();
+    });
+  });
+</script></body>
+</html></div>
 
 <div class="footer">© Ninja Xiter</div>
 
